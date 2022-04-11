@@ -65,7 +65,7 @@ def aggregate_to_summary(dpath, aggregation_ops, extracts_per_subpath):
 
 
 def write_summary(dpath, aggregations_per_key):
-    writer = tf.summary.FileWriter(dpath)
+    writer = tf.compat.v1.summary.FileWriter(dpath)
 
     for key, (steps, wall_times, aggregations) in aggregations_per_key.items():
         for step, wall_time, aggregation in zip(steps, wall_times, aggregations):
